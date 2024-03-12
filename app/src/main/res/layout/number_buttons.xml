@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<merge
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/background_gray">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <RelativeLayout
-        android:id="@+id/number_buttons"
-        android:layout_width="wrap_content"
+
+    <!--<RelativeLayout
+        android:id="@+id/btn_group_numbers"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <!-- 7 to 9 -->
+        &lt;!&ndash; 7 to 9 &ndash;&gt;
         <LinearLayout
             android:id="@+id/num0709"
             android:layout_width="wrap_content"
@@ -27,7 +24,7 @@
                 android:layout_height="@dimen/btn_size"
                 android:layout_margin="@dimen/btn_gap"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
-                app:cornerRadius="40dp"
+                app:cornerRadius="@dimen/btn_size"
                 android:backgroundTint="@color/button_white"
                 android:textSize="@dimen/txt_size"
                 android:textStyle="bold"
@@ -62,7 +59,7 @@
         </LinearLayout>
 
 
-        <!-- 4 to 6 -->
+        &lt;!&ndash; 4 to 6 &ndash;&gt;
         <LinearLayout
             android:id="@+id/num0406"
             android:layout_below="@+id/num0709"
@@ -111,7 +108,7 @@
         </LinearLayout>
 
 
-        <!-- 1 to 3 -->
+        &lt;!&ndash; 1 to 3 &ndash;&gt;
         <LinearLayout
             android:id="@+id/num0103"
             android:layout_below="@+id/num0406"
@@ -159,7 +156,7 @@
 
         </LinearLayout>
 
-        <!-- 0 and decimal -->
+        &lt;!&ndash; 0 and decimal &ndash;&gt;
         <LinearLayout
             android:id="@+id/num0000"
             android:layout_below="@+id/num0103"
@@ -207,56 +204,7 @@
                 android:text="@string/_dot" />
 
         </LinearLayout>
-    </RelativeLayout>
 
-    
-    <LinearLayout
-        android:id="@+id/operations"
-        android:layout_toEndOf="@id/number_buttons"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+    </RelativeLayout>-->
 
-        android:padding="0dp">
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="@dimen/btn_size"
-            android:layout_height="@dimen/btn_size"
-            android:layout_margin="@dimen/btn_gap"
-            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
-            app:cornerRadius="40dp"
-            android:backgroundTint="@color/button_gray"
-            android:textSize="@dimen/txt_size"
-            android:textStyle="bold"
-            android:textColor="@color/text_black"
-            android:text="@string/_7" />
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="@dimen/btn_size"
-            android:layout_height="@dimen/btn_size"
-            android:layout_margin="@dimen/btn_gap"
-            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
-            app:cornerRadius="40dp"
-            android:backgroundTint="@color/button_gray"
-            android:paddingVertical="0dp"
-            android:textSize="@dimen/txt_size"
-            android:textStyle="bold"
-            android:textColor="@color/text_black"
-            android:text="@string/_8" />
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="@dimen/btn_size"
-            android:layout_height="@dimen/btn_size"
-            android:layout_margin="@dimen/btn_gap"
-            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
-            app:cornerRadius="40dp"
-            android:backgroundTint="@color/button_gray"
-            android:textSize="@dimen/txt_size"
-            android:textStyle="bold"
-            android:textColor="@color/text_black"
-            android:text="@string/_9" />
-
-    </LinearLayout>
-
-
-</RelativeLayout>
+</merge>
