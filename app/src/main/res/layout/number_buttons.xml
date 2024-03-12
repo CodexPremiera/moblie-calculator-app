@@ -3,15 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-
-    <!--<RelativeLayout
-        android:id="@+id/btn_group_numbers"
-        android:layout_alignParentTop="true"
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_below="@id/clear_buttons"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
-        &lt;!&ndash; 7 to 9 &ndash;&gt;
+        <!-- 7 to 9 -->
         <LinearLayout
             android:id="@+id/num0709"
             android:layout_width="wrap_content"
@@ -24,9 +21,9 @@
                 android:layout_height="@dimen/btn_size"
                 android:layout_margin="@dimen/btn_gap"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
-                app:cornerRadius="@dimen/btn_size"
+                app:cornerRadius="40dp"
                 android:backgroundTint="@color/button_white"
-                android:textSize="@dimen/txt_size"
+                android:textSize="@dimen/num_size"
                 android:textStyle="bold"
                 android:textColor="@color/text_black"
                 android:text="@string/_7" />
@@ -39,7 +36,7 @@
                 app:cornerRadius="40dp"
                 android:backgroundTint="@color/button_white"
                 android:paddingVertical="0dp"
-                android:textSize="@dimen/txt_size"
+                android:textSize="@dimen/num_size"
                 android:textStyle="bold"
                 android:textColor="@color/text_black"
                 android:text="@string/_8" />
@@ -51,7 +48,7 @@
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 app:cornerRadius="40dp"
                 android:backgroundTint="@color/button_white"
-                android:textSize="@dimen/txt_size"
+                android:textSize="@dimen/num_size"
                 android:textStyle="bold"
                 android:textColor="@color/text_black"
                 android:text="@string/_9" />
@@ -59,7 +56,7 @@
         </LinearLayout>
 
 
-        &lt;!&ndash; 4 to 6 &ndash;&gt;
+        <!-- 4 to 6 -->
         <LinearLayout
             android:id="@+id/num0406"
             android:layout_below="@+id/num0709"
@@ -75,7 +72,7 @@
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 app:cornerRadius="40dp"
                 android:backgroundTint="@color/button_white"
-                android:textSize="@dimen/txt_size"
+                android:textSize="@dimen/num_size"
                 android:textStyle="bold"
                 android:textColor="@color/text_black"
                 android:text="@string/_4" />
@@ -88,7 +85,7 @@
                 app:cornerRadius="40dp"
                 android:backgroundTint="@color/button_white"
                 android:paddingVertical="0dp"
-                android:textSize="@dimen/txt_size"
+                android:textSize="@dimen/num_size"
                 android:textStyle="bold"
                 android:textColor="@color/text_black"
                 android:text="@string/_5" />
@@ -100,7 +97,7 @@
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 app:cornerRadius="40dp"
                 android:backgroundTint="@color/button_white"
-                android:textSize="@dimen/txt_size"
+                android:textSize="@dimen/num_size"
                 android:textStyle="bold"
                 android:textColor="@color/text_black"
                 android:text="@string/_6" />
@@ -108,7 +105,7 @@
         </LinearLayout>
 
 
-        &lt;!&ndash; 1 to 3 &ndash;&gt;
+        <!-- 1 to 3 -->
         <LinearLayout
             android:id="@+id/num0103"
             android:layout_below="@+id/num0406"
@@ -124,7 +121,7 @@
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 app:cornerRadius="40dp"
                 android:backgroundTint="@color/button_white"
-                android:textSize="@dimen/txt_size"
+                android:textSize="@dimen/num_size"
                 android:textStyle="bold"
                 android:textColor="@color/text_black"
                 android:text="@string/_1" />
@@ -139,7 +136,7 @@
                 android:paddingVertical="0dp"
                 android:textStyle="bold"
                 android:textColor="@color/text_black"
-                android:textSize="@dimen/txt_size"
+                android:textSize="@dimen/num_size"
                 android:text="@string/_2" />
 
             <com.google.android.material.button.MaterialButton
@@ -149,14 +146,14 @@
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 app:cornerRadius="40dp"
                 android:backgroundTint="@color/button_white"
-                android:textSize="@dimen/txt_size"
+                android:textSize="@dimen/num_size"
                 android:textStyle="bold"
                 android:textColor="@color/text_black"
                 android:text="@string/_3" />
 
         </LinearLayout>
 
-        &lt;!&ndash; 0 and decimal &ndash;&gt;
+        <!-- 0 and decimal -->
         <LinearLayout
             android:id="@+id/num0000"
             android:layout_below="@+id/num0103"
@@ -172,7 +169,7 @@
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 app:cornerRadius="40dp"
                 android:backgroundTint="@color/button_white"
-                android:textSize="@dimen/txt_size"
+                android:textSize="@dimen/num_size"
                 android:letterSpacing="0"
                 android:textStyle="bold"
                 android:textColor="@color/text_black"
@@ -186,7 +183,7 @@
                 app:cornerRadius="40dp"
                 android:backgroundTint="@color/button_white"
                 android:paddingVertical="0dp"
-                android:textSize="@dimen/txt_size"
+                android:textSize="@dimen/num_size"
                 android:textStyle="bold"
                 android:textColor="@color/text_black"
                 android:text="@string/_0" />
@@ -198,13 +195,12 @@
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 app:cornerRadius="40dp"
                 android:backgroundTint="@color/button_white"
-                android:textSize="@dimen/txt_size"
+                android:textSize="@dimen/num_size"
                 android:textStyle="bold"
                 android:textColor="@color/text_black"
                 android:text="@string/_dot" />
 
         </LinearLayout>
-
-    </RelativeLayout>-->
+    </RelativeLayout>
 
 </merge>
