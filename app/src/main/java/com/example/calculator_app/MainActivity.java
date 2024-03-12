@@ -1,7 +1,9 @@
 package com.example.calculator_app;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -30,6 +32,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         addListenerToAllButtons();
         textExpression = findViewById(R.id.text_expression);
         textAnswer = findViewById(R.id.text_answer);
+
+        // Change the navigation bar color
+        getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.background_gray));
     }
 
     private void addListenerToAllButtons() {
@@ -70,55 +75,60 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String buttonText = button.getText().toString();
 
         // get input in the text box
-        String expression = textExpression.getText().toString();
-        ArrayList<String> termsList = Splitter.getTermsList(expression);
-        StringBuilder newText = new StringBuilder(expression);
+        String rawExpression = textExpression.getText().toString();
+        ArrayList<String> termsList = Splitter.getTermsList(rawExpression);
+        StringBuilder newExpression = new StringBuilder(rawExpression);
 
         // get last term if there is any
         String lastTerm = (termsList.size() > 0) ? termsList.get(termsList.size() - 1) : "";
 
         // control input
-
         switch(buttonText) {
             case "%":
                 break;
             case "=":
-                String answer = calculator.calculate(expression);
-                newText = new StringBuilder(answer);
+                String answer = calculator.calculate(rawExpression);
+                newExpression = new StringBuilder(answer);
+
+                // reset textAnswer and sequential answer
+                textAnswer.setText(rawExpression);
                 break;
 
             case "+":
             case "-":
                 if (lastTerm.contains("+") || lastTerm.contains("-")) {
-                    newText.deleteCharAt(newText.length() - 1);
+                    newExpression.deleteCharAt(newExpression.length() - 1);
                 }
-                newText.append(buttonText);
+                newExpression.append(buttonText);
                 break;
             case "×":
             case "÷":
                 if (Character.isDigit(lastTerm.charAt(0)))
-                    newText.append(buttonText);
+                    newExpression.append(buttonText);
                 break;
             case ".":
                 boolean thereIsInput = !termsList.isEmpty();
                 boolean lastTermHasDot = lastTerm.contains(".");
                 if (thereIsInput && !lastTermHasDot)
-                    newText.append(buttonText);
+                    newExpression.append(buttonText);
                 break;
 
             case "AC":
-                newText.delete(0, newText.length());
+                newExpression.delete(0, newExpression.length());
+                textAnswer.setText("");
                 break;
             case "⌫":
-                if (newText.length() > 0)
-                    newText.deleteCharAt(newText.length() - 1);
+                if (newExpression.length() > 0)
+                    newExpression.deleteCharAt(newExpression.length() - 1);
                 break;
             default:
-                newText.append(buttonText);
+                newExpression.append(buttonText);
+                String sequentialAnswer = calculator.calculateSequentially(String.valueOf(newExpression));
+                textAnswer.setText(sequentialAnswer);
                 break;
         }
 
-        textExpression.setText(newText);
+        textExpression.setText(newExpression);
     }
 
 }

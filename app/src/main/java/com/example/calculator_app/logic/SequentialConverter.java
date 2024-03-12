@@ -1,8 +1,13 @@
 package com.example.calculator_app.logic;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Stack;
 
-public class InfixToPostfixConverter {
+public class SequentialConverter {
     private final Stack<Character> operatorStack = new Stack<>();
 
     private final Stack<Boolean> doParenthesisMultiply = new Stack<>();
@@ -15,17 +20,17 @@ public class InfixToPostfixConverter {
     private final Map<Character, Integer> precedence = new HashMap<>();
 
     // CONSTRUCTOR
-    public InfixToPostfixConverter() {
+    public SequentialConverter() {
         precedence.put('+', 1);
         precedence.put('-', 1);
-        precedence.put('*', 2);
-        precedence.put('/', 2);
-        precedence.put('^', 3);
+        precedence.put('*', 1);
+        precedence.put('/', 1);
+        precedence.put('^', 1);
     }
 
 
     // TODO fix parenthesis signs
-    public ArrayList<String> convertToPostfix(String infixExpression) {
+    public ArrayList<String> convertSequentially(String infixExpression) {
         // Prepare List
         operatorStack.clear();
         doParenthesisMultiply.clear();
@@ -98,7 +103,7 @@ public class InfixToPostfixConverter {
                 if (Character.isDigit(prevToken) || prevToken == '.')
                     outputQueue.add(outputQueue.remove(outputQueue.size() - 1) + token);
 
-                // single digit
+                    // single digit
                 else
                     outputQueue.add(String.valueOf(token));
             }
@@ -123,22 +128,8 @@ public class InfixToPostfixConverter {
                 }
 
                 // load operations from stack
-                while ( !operatorStack.isEmpty() ) {
-                    int stackPrecedence;
-                    int tokenPrecedence;
-
-                    try {
-                        stackPrecedence = precedence.getOrDefault(operatorStack.peek(), 0);
-                        tokenPrecedence = precedence.get(token);
-                    } catch (NullPointerException ne) {
-                        break;
-                    }
-
-                    if (stackPrecedence < tokenPrecedence) break;
-
+                if (!operatorStack.isEmpty())
                     outputQueue.add(String.valueOf(operatorStack.pop()));
-                }
-
                 operatorStack.push(token);
             }
         }
