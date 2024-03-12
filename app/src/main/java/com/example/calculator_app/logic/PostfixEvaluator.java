@@ -43,7 +43,8 @@ public class PostfixEvaluator {
     }
 
     private static boolean isOperator(String term) {
-        return term.equals("+") || term.equals("-") || term.equals("*") || term.equals("/") || term.equals("^");
+        return term.equals("+") || term.equals("-") || term.equals("*") || term.equals("/") ||
+                term.equals("^") || term.equals("×") || term.equals("÷");
     }
 
     private static double applyOperator(double a, double b, String operator) throws ArithmeticException {
@@ -53,8 +54,10 @@ public class PostfixEvaluator {
             case "-":
                 return a - b;
             case "*":
+            case "×":
                 return a * b;
             case "/":
+            case "÷":
                 if (b == 0) {
                     throw new ArithmeticException("Division by zero.");
                 }

@@ -14,10 +14,11 @@
     <string name="_dot">.</string>
     <string name="_divide">÷</string>
     <string name="_times">×</string>
-    <string name="_minus">—</string>
+    <string name="_minus">-</string>
     <string name="_plus">+</string>
     <string name="_ac">AC</string>
     <string name="_percent">%</string>
     <string name="_backspace">⌫</string>
     <string name="_equals">=</string>
+    <string name="settings">settings</string>
 </resources>
