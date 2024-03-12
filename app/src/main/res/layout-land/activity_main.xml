@@ -28,7 +28,7 @@
             android:textAlignment="textEnd"
             android:textSize="36sp"
             android:textStyle="bold"
-            android:text="afdsf"/>
+            android:text=""/>
 
         <TextView
             android:layout_width="match_parent"
@@ -43,13 +43,16 @@
             android:textAlignment="textEnd"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:text="adf"/>
+            android:text=""/>
 
     </RelativeLayout>
 
+
+    <!-- BUTTON GRID -->
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/basic_buttons"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="20dp"
@@ -81,6 +84,19 @@
 
             <include layout="@layout/sign_buttons" />
         </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/scientific_buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@id/basic_buttons">
+
+        <include layout="@layout/scientific_buttons" />
     </RelativeLayout>
 
 </RelativeLayout>

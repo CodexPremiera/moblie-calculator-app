@@ -9,7 +9,7 @@
 
     <dimen name="btn_xGap_ls">6dp</dimen>
     <dimen name="btn_yGap_ls">4dp</dimen>
-    <dimen name="btn_width_ls">90dp</dimen>
+    <dimen name="btn_width_ls">84dp</dimen>
     <dimen name="btn_height_ls">36dp</dimen>
     <dimen name="num_size_ls">14sp</dimen>
     <dimen name="sign_size_ls">20sp</dimen>
